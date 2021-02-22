@@ -23,6 +23,8 @@ Par la suite, nous sommes partis d'un modèle de Deep Learning pré-entraîné, 
   `2.3. Détection des visages et reconnaissance des masques par un modèle de Deep Learning : VGG16`
 Enfin, nous avons décidé de réaliser à nouveau un Transfert Learning sur un autre modèle pré-entraîné : VGG16. Les scripts sont disponibles dans le dossier *Detection_Video3_VJ-DL* 
 
-# Conclusion : Résultats globaux  
+# Conclusion 
+
+`Résultats globaux`
 
 
