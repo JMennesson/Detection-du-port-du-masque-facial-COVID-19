@@ -9,7 +9,9 @@ L’objectif de ce projet est de réaliser des algorithmes de détection du port
 
 # Démarches
 1. Comparaison des méthodes de détection de visages masqués sur des photos 
+
 Au sein du dossier *Detection_Methodes.zip* sont présentes les différentes méthodes d'apprentissage supervisé testées pour la détection de visages masqués (KNN, Decision Tree, Naive Bayes, SVM, CNN). 
+
 
 2. Utilisation de différentes méthodes de détection de visages masqués sur un flux vidéo
 
