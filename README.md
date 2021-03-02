@@ -1,4 +1,6 @@
-<img align="right" src="https://github.com/ClaireDel/Projet-P5/blob/main/images/CNN_Demo.gif" width=400 height=auto>
+<img align="middle" src="https://github.com/ClaireDel/Projet-P5/blob/main/images/CNN_Demo.gif" width=400 height=auto>
+
+
 
 # Projet-P5
 Détection du port du masque facial – COVID19
