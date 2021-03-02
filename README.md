@@ -1,4 +1,4 @@
-<img align="right" src="https://github.com/ClaireDel/Projet-P5/blob/main/images/CNN_Demo.gif" width=400 height=auto>
+<img align="right" src="https://github.com/ClaireDel/Projet-P5/blob/main/images/CNN_Demo_cropped.gif" width=400 height=auto>
 
 
 # Projet-P5
