@@ -1,8 +1,8 @@
-<img align="right" src="https://github.com/ClaireDel/Projet-P5/blob/main/images/CNN_Demo_cropped.gif" width=400 height=auto>
-
 
 # Projet-P5
 Détection du port du masque facial – COVID19
+
+<img align="right" src="https://github.com/ClaireDel/Projet-P5/blob/main/images/CNN_Demo_cropped.gif" width=400 height=auto>
 
 # Objectif 
 Le masque facial, autrefois pratiquement réservé au personnel médical, est devenu incontournable depuis le début de la pandémie de COVID19 pour l’ensemble de la population.
