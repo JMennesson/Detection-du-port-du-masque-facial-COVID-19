@@ -2,7 +2,7 @@
 Détection du port du masque facial – COVID19  
 
 <p align="center">
-  <img src="https://github.com/ClaireDel/Projet-P5/blob/main/images/CNN_Demo_cropped.gif" width=400 height=auto>
+  <img src="https://github.com/ClaireDel/Projet-P5/blob/main/images/CNN_Demo.gif" width=400 height=auto>
 </p>
 
 # Objectif 
