@@ -11,20 +11,26 @@ L’objectif de ce projet est de réaliser des algorithmes de détection du port
 
 
 # Démarches
-`1. Comparaison des méthodes de détection de visages masqués sur des photos`
+`1. Présentation des données`
 
-Les différentes méthodes d'apprentissage supervisé testées pour la détection de visages masqués (KNN, Decision Tree, Naive Bayes, SVM, CNN) sont présentes au sein du dossier *Detection_Methodes.zip*. 
+Le dataset utilisé pour réaliser l’entrainement des différents modèles qui vont suivre contient 15 284 images en couleur et de taille 64x64 appartenant à 3 classes différentes :   With Mask / Without Mask / Mask Incorrectly Worn. 
+Le dataset est accessible via le lien Drive : " ". 
 
-`2. Utilisation de différentes méthodes de détection de visages masqués sur un flux vidéo`
+`2. Etudes préliminaires`
 
-  `2.1. Détection des visages par Viola Jones et reconnaissance des masques par un modèle de Deep Learning : MobileNetV2`
-Le dossier *Detection_Video1_VJ-DL* comprend le code et fichiers nécessaires afin de détecter les visages par une méthode de Viola Jones , et les masques par un modèle de Deep Learning (MobileNetV2) déjà entraîné et prêt à l'emploi.
+L’enjeu de cette partie est d’illustrer les performances de différents modèles de classifieurs d’images de visages masqués par apprentissage supervisé : KNN, Decision Tree, Naive Bayes, SVM, et CNN. 
 
-  `2.2. Détection des visages et reconnaissance des masques par un modèle de Deep Learning : InceptionV3`
-Par la suite, nous sommes partis d'un modèle de Deep Learning pré-entraîné, InceptionV3, et avons réalisé un Transfert Learning pour pouvoir l'exploiter sur un des datasets que nous avons choisi. Les scripts python détaillant la préparation des données, l'entraînement et le lancement du flux vidéo sont présents dans le dossier *Detection_Video2_VJ-DL*. 
+`3. Réseau de neurones convolutif (CNN)`
 
-  `2.3. Détection des visages et reconnaissance des masques par un modèle de Deep Learning : VGG16`
-Enfin, nous avons décidé de réaliser à nouveau un Transfert Learning sur un autre modèle pré-entraîné : VGG16. Les scripts sont disponibles dans le dossier *Detection_Video3_VJ-DL*. 
+Pour l'étude des CNN, nous nous sommes appuyés sur les modèles InceptionV3 et VGG16. 
+
+`4. Implémentation sur flux vidéo`
+
+L’objectif de cette partie est de lancer un flux vidéo et être capable d’afficher les prédictions du modèle VGG16 sur la vidéo étudiée en temps réel. 
+
+`5. Utilisation d'un classifieur Viola et Jones`
+
+Nous avons enfin tentés de créer notre propre classifieur Viola et Jones pour la détection de l'objet 'visae masqué'. 
 
 
 # Conclusion 
