@@ -45,7 +45,6 @@ X1 = pickle.load(pickle_in)
 pickle_in = open("y1.pickle", "rb")
 y1 = pickle.load(pickle_in)
 
-# ............................................................................
 
 # Normalisation des données
 X = X / 255.
@@ -71,7 +70,6 @@ history = model.fit(X,
                     callbacks=[checkpoint], 
                     validation_split=0.1)
 
-# ............................................................................
 
 # Enregistrement du modèle
 model.save('inceptionV3-model.h5')
@@ -82,8 +80,6 @@ model.save('inceptionV3-model.h5')
 model.evaluate(X1, y1)
 Y_pred = np.argmax(model.predict(X1), axis=1)
 y1 = np.argmax(y1, axis=1)
-
-# ............................................................................
 
 # Affichage de la matrice de confusion
 sns.heatmap(confusion_matrix(y1, Y_pred), annot=True, fmt='g', cmap=plt.cm.Blues)
