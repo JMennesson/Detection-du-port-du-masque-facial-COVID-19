@@ -15,11 +15,11 @@ L’objectif de ce projet est de réaliser des algorithmes de détection du port
 
 Le dataset utilisé pour réaliser l’entrainement des différents modèles qui vont suivre contient 15 284 images en couleur et de taille 64x64 appartenant à 3 classes différentes :   With Mask / Without Mask / Mask Incorrectly Worn. 
 
-Le dataset est accessible via le lien Drive : https://drive.google.com/drive/folders/1e70k-LQBAeDUumunceQqOAkQc23dsvHX 
+Il est accessible via le lien Drive : https://drive.google.com/drive/folders/1e70k-LQBAeDUumunceQqOAkQc23dsvHX 
 
 `2. Etudes préliminaires`
 
-L’enjeu de cette partie est d’illustrer les performances de différents modèles de classifieurs d’images de visages masqués par apprentissage supervisé : KNN, Decision Tree, Naive Bayes, SVM, et CNN. 
+L’enjeu de cette partie est d’illustrer les performances de différents modèles de classifieurs d’images de visages masqués par apprentissage supervisé : KNN, Decision Tree, Naive Bayes, SVM. 
 
 `3. Réseau de neurones convolutif (CNN)`
 
@@ -27,7 +27,7 @@ Pour l'étude des CNN, nous nous sommes appuyés sur les modèles InceptionV3 et
 
 `4. Implémentation sur flux vidéo`
 
-L’objectif de cette partie est de lancer un flux vidéo et être capable d’afficher les prédictions du modèle VGG16 sur la vidéo étudiée en temps réel. 
+L’objectif de cette partie est de lancer un flux vidéo et d'être capable d’afficher les prédictions du modèle VGG16 sur la vidéo étudiée en temps réel. 
 
 `5. Utilisation d'un classifieur Viola et Jones`
 
