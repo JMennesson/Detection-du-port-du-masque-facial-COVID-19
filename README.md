@@ -30,7 +30,7 @@ L’objectif de cette partie est de lancer un flux vidéo et être capable d’a
 
 `5. Utilisation d'un classifieur Viola et Jones`
 
-Nous avons enfin tentés de créer notre propre classifieur Viola et Jones pour la détection de l'objet 'visae masqué'. 
+Nous avons enfin tentés de créer notre propre classifieur Viola et Jones pour la détection de l'objet 'visage masqué'. Le dataset utilisé dans cette partie est accessible via le lien suivant : https://drive.google.com/drive/folders/1ZeTTiteR38-rl9l4GNWzWim8tntGgHVi
 
 
 # Conclusion 
