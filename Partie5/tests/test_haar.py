@@ -1,22 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb 17 17:58:04 2021
-
-@author: clair
-"""
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jan 29 09:11:50 2021
-
-@author: clair
-"""
 import cv2
 import sys
 import os
 from matplotlib import pyplot as plt
 
 
-#On effectue les tests sur tous les classifieurs créés (mymaskedfacedetetor 0, 1, 2)
+# On effectue les tests sur tous les classifieurs créés (mymaskedfacedetetor 0, 1, 2)
 classCascade = cv2.CascadeClassifier('mymaskedfacedetector2.xml')
 
 
@@ -27,7 +15,7 @@ Affichage des rectangles pour vérifier la localisation du masque détecté
 
 imagePath = '0-with-mask - Copie.jpg' #modifiable
 
-#Affichage de l'image
+# Affichage de l'image
 image = cv2.imread(imagePath)
 plt.imshow(image)
 plt.show()
@@ -69,8 +57,6 @@ def Optimal(classifieur_path,data_path):
     for minN in range(5,100):  #à changer selon le classifieur
         
         erreur = 0
-        # nbVisagesReel = 0
-        # nbVisagesDetec = 0
         
         for name in files_test : 
             image = cv2.imread(data_path+'/'+name)
@@ -109,15 +95,10 @@ mymaskedfacedetector2.xml -> 53
 """
 
 """
-(1) Test sur des images où le masque à été ajouté avec photoshop
+(1) Test sur des images où le masque a été ajouté avec photoshop
 ('data/positive/positive_test')
 
-Si notre classifieur fonctionne pour détecter ce type de masque
-on s'attend à un score de 100% sur le jeu de données test
-"""
-
-"""
-(2)Test sur des images de visages masqués avec des masques variés 
+(2) Test sur des images de visages masqués avec des masques variés 
 (différents de celui utilisé pour l'entraînement)
  ('data/positive/positive_varied_masks_test')
 """
@@ -144,19 +125,19 @@ for name in files_test :
         flags = cv2.CASCADE_SCALE_IMAGE
         )
     
-    # #Affichage des rectangles
+    # # Affichage des rectangles
     # for (x, y, w, h) in faces:
     #     cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
     # plt.imshow(image)
     # plt.show()
     
-    #Analyse de la performance
+    # Analyse de la performance
     i+= 1
     sum_masks = sum_masks + len(faces)
     if len(faces)>= 1 : 
         presence_mask += 1
     
-    #On cherche les bugs
+    # On cherche les bugs
     if len(faces)> 1 : 
         max_masks.append(len(faces)) #par curiosité on regarde toutes les images 'mal traitrées'
         bug = image
@@ -170,20 +151,21 @@ print("Le score du classifieur est donc de {0}".format(presence_mask/i))
 print("Les nombres maximum de visages masqués sur une photo sont de {0}.".format(max_masks))
 
 """
-#affichage des images bug
+# Affichage des images bug
 for image in images_bug :  
     plt.imshow(image)
     plt.show()
 """  
+
 """
 Test sur des images négatives (sans visages masqués)
-On en profitera pour remarquer la réaction du classifieur pour des images avec masque seul
 """
 
 """
-(3) On regarde, sur un petit jeu de données,
+(3) On en profitera pour remarquer la réaction du classifieur pour des images avec masque seul.
+On regarde donc, sur un petit jeu de données,
 si le classifieur détecte le masque seul. 
-On remarque que le classifieur réagit bien, il ne considère pas l'objet 'masque' seul
+On remarque que le classifieur réagit bien, il ne considère pas l'objet 'masque' seul.
 """
 #path_test = 'data/negative/negative_masques_seuls'
 
@@ -214,13 +196,13 @@ for name in files_test :
         flags = cv2.CASCADE_SCALE_IMAGE
         )
     
-    #Analyse de la performance
+    # Analyse de la performance
     i+= 1
     sum_masks = sum_masks + len(faces)
     if len(faces)>= 1 : 
         presence_mask += 1
     
-    #On cherche les bugs
+    # On cherche les bugs
     if len(faces)>= 1 : 
         max_masks.append(len(faces)) #par curiosité on regarde toutes les images 'mal traitrées'
         bug = image
@@ -232,7 +214,7 @@ print("La présence de masque(s) a été observée sur {0} images parmi les sur 
 print("Le score du classifieur est donc de {0}".format(1 - presence_mask/i))
 print("Le nombre maximum de visages masqués sur une photo est de {0}.".format(max_masks))
 
-# #affichage des images bug
+# #Affichage des images bug
 # for name in names_images_bug :      
 #     image = cv2.imread(path_test+'/'+name)
 #     # Detection
