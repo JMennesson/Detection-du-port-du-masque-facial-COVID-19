@@ -5,7 +5,7 @@ import pickle
 import seaborn as sns
 
 
-# On part d'un jeux de données organisés en dossiers d'images non labelisées
+# On part d'un jeu de données organisé en dossiers d'images non labelisées
 # Pour exploiter ce jeu de données, il faut associer un label à toutes les images de chaque sous-dossier
 
 
