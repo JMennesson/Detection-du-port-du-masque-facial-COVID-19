@@ -6,7 +6,7 @@ import seaborn as sns
 
 sns.set()
 
-# Dataset 
+# Chargement du dataset 
 pickle_in = open("X.pickle", "rb")
 X = pickle.load(pickle_in)
 pickle_in = open("y.pickle", "rb")
@@ -35,7 +35,7 @@ X1 = X1 / 255.0
 # Importation du modèle suivant une distribution Gaussienne
 gaussianNB_model = sklearn.naive_bayes.GaussianNB()
 
-# Training
+# Training du modèle 
 gaussianNB_model.fit(X, y)
 
 # Prediction
