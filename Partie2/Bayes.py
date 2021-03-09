@@ -19,7 +19,7 @@ y1 = pickle.load(pickle_in)
 # Labels
 CATEGORIES = ['Without Mask', 'Wearing Mask', 'Incorrectly Wearing Mask']
 
-# Dimension : 1D
+# Mise à plat des données
 X = X.reshape(-1, 64*64*3)
 X1 = X1.reshape(-1, 64*64*3)
 
@@ -29,17 +29,20 @@ X1 = X1 / 255.0
 
 # .............................................................................
 
-" GaussianNB "
- 
-# Modèle
+" Modèle 1 : Distribution Gaussienne "
+
+
+# Importation du modèle suivant une distribution Gaussienne
 gaussianNB_model = sklearn.naive_bayes.GaussianNB()
+
 # Training
 gaussianNB_model.fit(X, y)
+
 # Prediction
 gnb_y_pred = gaussianNB_model.predict(X1)
 
 
-# Précisions
+# Evaluation de l'algorithme
 print('GaussianNB Metrics')
 accuracy = sklearn.metrics.accuracy_score(y1, gnb_y_pred)
 print('Accuracy: %f' % accuracy)
@@ -48,22 +51,24 @@ print('Recall: %f' % recall)
 f1_score = sklearn.metrics.f1_score(y1, gnb_y_pred, average='micro')
 print('F1 Score: %f' % f1_score, end='\n\n')
 
-
-# Matrice de confusion
+# Affichage de la matrice de confusion
 cm = sklearn.metrics.confusion_matrix(y1, gnb_y_pred)
 plt.figure(figsize=(9, 9))
 sns.heatmap(cm, annot=True, fmt='.0f', linewidths=.5, square=True,cmap='Blues', yticklabels=CATEGORIES, xticklabels=CATEGORIES)
 plt.title('Confusion Matrix for GaussianNB')
 
+
 # .............................................................................
 
-" MultinomialNB "
+" Modèle 1 : Distribution Multinomiale "
+
+
 # Modèle
 multinomialNB_model = sklearn.naive_bayes.MultinomialNB()
 multinomialNB_model.fit(X, y)
 mnb_y_pred = multinomialNB_model.predict(X1)
 
-# Précisions 
+# Evaluation de l'algorithme
 print('MultinomialNB Metrics')
 accuracy = sklearn.metrics.accuracy_score(y1, mnb_y_pred)
 print('Accuracy: %f' % accuracy)
@@ -72,7 +77,7 @@ print('Recall: %f' % recall)
 f1_score = sklearn.metrics.f1_score(y1, mnb_y_pred, average='micro')
 print('F1 Score: %f' % f1_score, end='\n\n')
 
-# Matrice de confusion 
+# Affichage de la matrice de confusion
 cm = sklearn.metrics.confusion_matrix(y1, mnb_y_pred)
 plt.figure(figsize=(9, 9))
 sns.heatmap(cm, annot=True, fmt='.0f', linewidths=.5, square=True,cmap='Blues', yticklabels=CATEGORIES, xticklabels=CATEGORIES)
