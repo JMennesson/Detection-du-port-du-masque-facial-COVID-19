@@ -36,8 +36,5 @@ Nous avons enfin tentés de créer notre propre classifieur Viola et Jones pour 
 Le dataset utilisé dans cette partie est accessible via le lien suivant : https://drive.google.com/drive/folders/1ZeTTiteR38-rl9l4GNWzWim8tntGgHVi
 
 
-# Conclusion 
-
-`Résultats globaux`
 
 
