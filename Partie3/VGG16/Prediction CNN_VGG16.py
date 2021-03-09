@@ -44,6 +44,7 @@ print("Prédiction :")
 print("Nombre d'erreurs : ", e, "sur", len(y1), ' ', "(" + str(round(e/len(E)*100, 3)) + "%" + ")")
 
 
+# Affichage de la matrice de confusion
 cm = sklearn.metrics.confusion_matrix(y2, y_pred1)
 plt.figure(figsize=(9, 9))
 sns.heatmap(cm, annot=True, fmt='.0f', square=True, linewidths=.5, cmap='Blues')
@@ -53,7 +54,7 @@ plt.title('Matrice de Confusion')
 plt.show()
 
     
-# On peut aussi tester l'agorithme sur une image quelconque 
+# On peut aussi tester l'algorithme sur une image quelconque 
 def test_image() :  
     image = cv2.imread('XXX.jpg')
     cv2.imshow('image', image)
