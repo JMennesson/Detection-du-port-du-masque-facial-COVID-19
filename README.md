@@ -14,6 +14,7 @@ L’objectif de ce projet est de réaliser des algorithmes de détection du port
 `1. Présentation des données`
 
 Le dataset utilisé pour réaliser l’entrainement des différents modèles qui vont suivre contient 15 284 images en couleur et de taille 64x64 appartenant à 3 classes différentes :   With Mask / Without Mask / Mask Incorrectly Worn. 
+
 Le dataset est accessible via le lien Drive : https://drive.google.com/drive/folders/1e70k-LQBAeDUumunceQqOAkQc23dsvHX 
 
 `2. Etudes préliminaires`
@@ -31,6 +32,7 @@ L’objectif de cette partie est de lancer un flux vidéo et être capable d’a
 `5. Utilisation d'un classifieur Viola et Jones`
 
 Nous avons enfin tentés de créer notre propre classifieur Viola et Jones pour la détection de l'objet 'visage masqué'. 
+
 Le dataset utilisé dans cette partie est accessible via le lien suivant : https://drive.google.com/drive/folders/1ZeTTiteR38-rl9l4GNWzWim8tntGgHVi
 
 
