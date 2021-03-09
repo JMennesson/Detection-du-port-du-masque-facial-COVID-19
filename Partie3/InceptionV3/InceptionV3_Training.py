@@ -1,20 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 import tensorflow as tf
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
-
 import pickle
 
-# Modèle CNN pré-entraîné InceptionV3
+
+# Chargement du modèle CNN pré-entraîné : InceptionV3
 pre_trained_model = InceptionV3(include_top=False, weights='imagenet', input_shape=(75, 75, 3))
 pre_trained_model.summary()
 
 
-# Blocage de toutes les couches sauf la couche fully-connected
+# Conception du réseau de prédiction
 for layer in pre_trained_model.layers:
     layer.trainable = False
     
@@ -25,19 +24,18 @@ last_output = last_layer.output
 x = tf.keras.layers.Flatten()(last_output)
 x = tf.keras.layers.Dense(1024, activation='relu')(x) # fonction d'activation ReLU
 x = tf.keras.layers.Dropout(0.3)(x) # couche drop out 
-#La dernière couche avec 3 sorties pour les 3 catégories
 x = tf.keras.layers.Dense(3, activation='softmax')(x) # softmax : proba 
 
 # ............................................................................
 
-# Création du modèle
+# Compilation du modèle 
 model = tf.keras.models.Model(inputs=pre_trained_model.input, outputs=x)
 model.summary()
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc'])
 
 # ............................................................................
 
-# Dataset
+# Chargement du dataset
 pickle_in = open("X.pickle", "rb")
 X = pickle.load(pickle_in)
 pickle_in = open("y.pickle", "rb")
@@ -53,13 +51,12 @@ y1 = pickle.load(pickle_in)
 X = X / 255.
 X1 = X1 / 255.
 
-# On transforme y1 pour l'utilisation
 y = tf.keras.utils.to_categorical(y, num_classes=None, dtype='int64')
 y1 = tf.keras.utils.to_categorical(y1, num_classes=None, dtype='int64')
 
 # ............................................................................
 
-# Entrainement 
+# Entrainement du modèle
 checkpoint = tf.keras.callbacks.ModelCheckpoint(
     filepath='data/model-{epoch:03d}.ckpt',
     save_weights_only=True,
@@ -81,7 +78,7 @@ model.save('inceptionV3-model.h5')
 
 # ............................................................................
 
-# Phase de test
+# Evaluation du modèle 
 model.evaluate(X1, y1)
 Y_pred = np.argmax(model.predict(X1), axis=1)
 y1 = np.argmax(y1, axis=1)
