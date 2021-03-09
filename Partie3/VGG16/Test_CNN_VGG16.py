@@ -9,10 +9,12 @@ from keras.layers import Flatten, Dense, Dropout
 import keras
 
 
-# Ce programme est destiné à évaluer si le CNN construit overfit, via cross validation
+# Ce programme est destiné à determiner via cross validation les paramètres optimaux pour éviter l'overfitting
 # Le praramètre choisi pour évaluer l'overfitting est l'erreur quadratique moyenne
-# Pour des raisons de performances de ma machine, j'ai réalisé ce test avec 1500 données (le jeu de test)
+# Le test est réalisé avec 1500 données (le jeu de test)
 
+
+# Chargement du dataset
 pickle_in = open("X1.pickle", "rb")
 X = pickle.load(pickle_in)
 pickle_in = open("y1.pickle", "rb")
@@ -20,10 +22,11 @@ y = pickle.load(pickle_in)
 pickle_in = open("data1.pickle", "rb")
 data = pickle.load(pickle_in)
 
-
+# Normalisation des données
 X = X / 255
 y = tf.keras.utils.to_categorical(y, num_classes=None, dtype='float32')
 
+# Création du réseau 
 model = VGG16(weights="imagenet", include_top=False, input_shape= [64, 64, 3])
 for layer in model.layers:
    layer.trainable = False
@@ -38,6 +41,7 @@ x = Dropout(0.3)(x)
 x = Dense(3, activation='softmax')(x)
 CNN = keras.models.Model(inputs=model.input, outputs=x)
 CNN.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
 
 # Vérification d'overfitting via cross validation
 def verif_over(model):
