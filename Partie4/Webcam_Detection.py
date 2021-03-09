@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
+# Importation du détecteur de visage Viola Jones 
 faceCascade = cv2.CascadeClassifier('XXX.xml')
 model = load_model('XXX.h5')
 
