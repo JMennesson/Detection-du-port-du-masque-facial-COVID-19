@@ -11,6 +11,9 @@ L’objectif de ce projet est de réaliser des algorithmes de détection du port
 
 
 # Démarches
+
+La trame suivie ici est celle du rapport "RAPPORT_Détection du port du masque facial – COVID 19.pdf"
+
 `1. Présentation des données`
 
 Le dataset utilisé pour réaliser l’entrainement des différents modèles qui vont suivre contient 15 284 images en couleur et de taille 64x64 appartenant à 3 classes différentes :   With Mask / Without Mask / Mask Incorrectly Worn. 
